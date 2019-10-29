@@ -1,4 +1,4 @@
-#- Templated section: start ------------------------------------------------------------------------
+`#- Templated section: start ------------------------------------------------------------------------
 import os
 from bifrostlib import datahandling
 
