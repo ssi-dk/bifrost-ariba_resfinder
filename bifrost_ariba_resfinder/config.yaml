@@ -1,23 +1,29 @@
 #-Basic info----------------------------------------------------------------------------------------
-name: ariba_resfinder
-version: 2.0.7
+display_name: ariba_resfinder
+name: &name ariba_resfinder__unspecified__unspecified
+version:
+  schema: 2.0
+  code: unspecified
+  resource: unspecified
 #---------------------------------------------------------------------------------------------------
 
 #-Details-------------------------------------------------------------------------------------------
 details:
-  category: resistance
-  schema_version: 2.0
   target: sample
-  type: pipeline
-  recommendation: recommended
   description: >
     This preforms read based mapping against the resfinder DB's. The options show the species entries 
     which will be attempted for mlst with key originating from the species DB. This is done against 
     the cge_db using ariba.
 #---------------------------------------------------------------------------------------------------
 
-#-Docker location-----------------------------------------------------------------------------------
-dockerfile: &dockerfile "docker://ssidk/bifrost-ariba_resfinder:2.0.7"
+#-Category info-------------------------------------------------------------------------------------
+category: [resistance]
+#---------------------------------------------------------------------------------------------------
+
+#-Install-------------------------------------------------------------------------------------------
+install:
+  path: # Set by install program
+  dockerfile: docker://ssidk/bifrost_ariba_plasmidfinder:unspecified__unspecified
 #---------------------------------------------------------------------------------------------------
 
 #-Options-------------------------------------------------------------------------------------------
@@ -26,7 +32,7 @@ options:
 
 #-Required resource files---------------------------------------------------------------------------
 resources:
-  database_path: "/bifrost_resources/resfinder/ref_db/"
+  database_path: "/bifrost_ariba_resfinder/resources/resfinder/ref_db/"
 #---------------------------------------------------------------------------------------------------
 
 #-Requirements to run component---------------------------------------------------------------------
@@ -52,7 +58,7 @@ db_values_changes:
     report:
       resistance:
         title: Resistance
-        info: *dockerfile
+        info: *name
         columns:  # headers, these values are statically present in datadump
           - {id: "gene", name: "gene"}
           - {id: "coverage", name: "%cov"}
