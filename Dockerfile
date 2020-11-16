@@ -51,7 +51,7 @@ RUN \
 #- Additional resources (files/DBs): start ---------------------------------------------------------
 WORKDIR /${NAME}/resources/resfinder
 RUN \
-    ariba getref resfinder resfinder --version 147c602 && \
+    ariba getref resfinder resfinder --version 3bfc4a3 && \
     ariba prepareref -f resfinder.fa -m resfinder.tsv ref_db;
 #- Additional resources (files/DBs): end -----------------------------------------------------------
 
